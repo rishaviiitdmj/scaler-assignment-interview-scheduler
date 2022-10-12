@@ -15,7 +15,7 @@
 $link = new mysqli('localhost', 'root', '','interview');
 if(!$link) {
 echo '<h4><center>Unable to connect to server.<br>'.mysql_error().'</center></h4>';
-}
+}else{
 $dt=date('Y-m-d');
 $query ="SELECT * FROM interviews where doi>='$dt' ORDER BY doi";
 $result = mysqli_query($link, $query);
@@ -67,6 +67,6 @@ while($row = mysqli_fetch_assoc($result)) {
 <?php	
 	}
   }
-
+}
 mysqli_close($link);
 ?>
